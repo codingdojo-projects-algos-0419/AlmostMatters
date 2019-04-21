@@ -15,6 +15,24 @@ def index():
     return render_template("index.html")
 
 
+def show_register_page():
+    print(f"ROUTE: register")
+    return render_template("register.html")
 
 
+def process_new_user():
+    print(f"ROUTE: process_new_user")
+    errors = Users.validate(request.form)
+    if errors:
+        for error in errors:
+            flash(error)
+        return redirect('/register')
 
+    user_id = Users.create(request.form)
+    session['user_id'] = user_id
+    return redirect(url_for("show_dashboard"))
+
+
+def show_dashboard():
+    print(f"ROUTE: show_dashboard")
+    return render_template("dashboard.html")

@@ -51,6 +51,7 @@ class Users(db.Model):
         pw_hash = bcrypt.generate_password_hash(form['password'])
         user = cls(first_name=form['first_name'],
                    last_name=form['last_name'],
+                   screen_name=form['screen_name'],
                    email=form['email'],
                    password=pw_hash
                    )

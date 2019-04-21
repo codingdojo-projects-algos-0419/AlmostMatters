@@ -97,7 +97,7 @@ class Memberships(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     members = db.relationship("Users", foreign_keys=[user_id], backref="user_membership", cascade="all")
     channel_id = db.Column(db.Integer, db.ForeignKey("channels.id"), nullable=False)
-    channels = db.relationship("Channels_id", foreign_keys=[user_id], backref="channel_members", cascade="all")
+    channels = db.relationship("Channels", foreign_keys=[channel_id], backref="channel_members", cascade="all")
     created_at = db.Column(db.DateTime, server_default=func.now())
     updated_at = db.Column(db.DateTime, server_default=func.now(), onupdate=func.now())
 

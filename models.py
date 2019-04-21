@@ -68,3 +68,48 @@ class Users(db.Model):
         return False, "Email or bad password"
 
 
+class ChannelTypes(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(45))
+    created_at = db.Column(db.DateTime, server_default=func.now())
+    updated_at = db.Column(db.DateTime, server_default=func.now(), onupdate=func.now())
+
+    def __repr__(self):
+        return "ChannelTypes(id ='%s', name = '%s', created_at = '%s')" % (self.id, self.name, self.created_at)
+
+
+class Channels(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(45))
+    created_by_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    creator = db.relationship("Users", foreign_keys=[created_by_id], backref="created_channels", cascade="all")
+    created_at = db.Column(db.DateTime, server_default=func.now())
+    updated_at = db.Column(db.DateTime, server_default=func.now(), onupdate=func.now())
+
+    def __repr__(self):
+        return "Channels(id ='%s', title = '%s', created_by_id = '%s', creator = '%s')" % (self.id, self.title,
+                                                                                           self.created_by_id,
+                                                                                           self.creator)
+
+
+class Memberships(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    members = db.relationship("Users", foreign_keys=[user_id], backref="user_membership", cascade="all")
+    channel_id = db.Column(db.Integer, db.ForeignKey("channels.id"), nullable=False)
+    channels = db.relationship("Channels_id", foreign_keys=[user_id], backref="channel_members", cascade="all")
+    created_at = db.Column(db.DateTime, server_default=func.now())
+    updated_at = db.Column(db.DateTime, server_default=func.now(), onupdate=func.now())
+
+    def __repr__(self):
+        return "Memberships(id ='%s', title = '%s', created_at = '%s')" % (self.id, self.title, self.created_at)
+
+
+class AccessLevels(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(45))
+    created_at = db.Column(db.DateTime, server_default=func.now())
+    updated_at = db.Column(db.DateTime, server_default=func.now(), onupdate=func.now())
+
+    def __repr__(self):
+        return "AccessLevels(id ='%s', name = '%s', created_at = '%s')" % (self.id, self.name, self.created_at)

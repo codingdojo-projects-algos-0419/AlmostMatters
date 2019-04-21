@@ -36,3 +36,20 @@ def process_new_user():
 def show_dashboard():
     print(f"ROUTE: show_dashboard")
     return render_template("dashboard.html")
+
+
+def show_login_page():
+    print(f"ROUTE: show_dashboard")
+    return render_template("login.html")
+
+
+def login():
+    print(f"ROUTE: login: {request.form}")
+    valid, response = Users.login_validate(request.form)
+
+    if not valid:
+        flash(response)
+        return redirect('/login')
+    session['user_id'] = response
+    return redirect(url_for("show_dashboard"))
+

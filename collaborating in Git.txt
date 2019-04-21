@@ -8,7 +8,7 @@ Collaborating in Git
 
 4. Once you have added all of the files, commit them with 'git commit -m', and enter a description of the change when prompted. If you can't easily describe your changes, you probably waited too long to do a commit and should consider smaller change intervals. 
 
-5. When your feature is ready for review, use 'git push' (from the branch) to send it up to Origin. If you setup the repo correctly, it should work with just 'git push', but otherwise you can use the command 'git push --set-upstream origin <branch name>'.
+5. When your feature is ready for review, use 'git push' (from the branch) to send it up to Origin. The first time you push a branch to Origin you will need to use the command 'git push --set-upstream origin <branch name>'. After that, a 'git push' will suffice.
 
 6. After pushing the feature branch, go to the GitHub repo site and submit a pull request. This will allow your partner to review the work before it is added to Origin. 
 

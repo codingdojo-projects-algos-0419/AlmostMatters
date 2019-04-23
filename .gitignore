@@ -10,9 +10,7 @@ venv/
 .vscode/
 .editorconfig
 *.mwb
-*.db
 *.ini
 *.mako
-python_stack/flask/first_orm_app/migrations/
 /app/
 static/storage/

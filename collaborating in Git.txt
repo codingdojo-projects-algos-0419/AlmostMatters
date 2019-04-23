@@ -1,6 +1,7 @@
 Collaborating in Git
 
-1. Always start by doing a 'git fetch' to pull down any new changes. Note that this is a safe command as it only creates a local copy of Origin. If there are any updates, you will need to do a 'git merge' before you start working on anything. Once you get comfortable with those commands you can just use 'git pull' which combines the two.
+1. Always start by doing a 'git fetch' to pull down any new changes. Note that this is a safe command as it only creates a local copy of Origin. If there are any updates, you will need to do a 'git merge' before you start working on anything. Once you get comfortable with those commands you can just use 'git pull' which combines the two. 
+
 
 2. Don't work out of Master! Always create a local feature branch and make your changes from there. Use 'git checkout -b <branch name>' to both create a new branch and check it out.
 

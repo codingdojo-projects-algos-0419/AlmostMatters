@@ -52,4 +52,3 @@ def login():
         return redirect('/login')
     session['user_id'] = response
     return redirect(url_for("show_dashboard"))
-

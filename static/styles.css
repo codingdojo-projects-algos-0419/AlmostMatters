@@ -1,0 +1,16 @@
+.navbar-brand{
+  font-size: xx-large;
+  padding: 5px;
+}
+.container-fluid{
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+h1{
+  color: darkmagenta;
+}
+.wrapper{
+  display: inline-block;
+  width: 50%;
+}

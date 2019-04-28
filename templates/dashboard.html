@@ -1,10 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Dashboard</title>
-</head>
+<html lang="en" xmlns:http="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <title>AlmostMatters</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.js"></script>
+        <script src="{{ url_for('static', filename='register.js') }}"></script>
+        <!-- <style>
+            .navbar-brand
+            {
+            font-size: xx-large;
+            padding: 5px;
+            }
+        </style> -->
+    </head>
 <body>
-<h1>DASHBOARD</h1>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+            <span style="font-size: 3em; color: white;">
+                <i class="fas fa-battery-half"></i>
+            </span>
+            <a class="navbar-brand" href="">AlmostMatters</a> 
+            <div class="navbar-collapse collapse" id="collapsingNavbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="" >Edit Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="" >Sign Out</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="btn-group-vertical">
+        <button type="button" class="btn btn-primary">PUBLIC CHANNELS</button>
+        <button type="button" class="btn btn-primary">PRIVATE CHANNELS</button>
+        <button type="button" class="btn btn-primary">DIRECT MESSAGES</button>
+    </div>
+    
 </body>
 </html>

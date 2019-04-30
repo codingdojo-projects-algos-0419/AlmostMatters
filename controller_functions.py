@@ -47,7 +47,7 @@ def show_dashboard():
     private_channels = Channels.query.filter_by(id=PRIVATE_CHANNEL)
     owned_channels = Channels.get_owned_channels(current_user.id)
 
-    return render_template("dashboard_test2.html", user=current_user,public_channels=public_channels,
+    return render_template("dashboard_test.html", user=current_user,public_channels=public_channels,
                            owned_channels=owned_channels)
 
 
